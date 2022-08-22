@@ -1,10 +1,7 @@
-import { EventEmitter } from "@angular/core";
 import { Ingredient } from "../shared/ingredient.model";
 import { Recipe } from "./recipe.model";
 
 export class RecipeService {
-  // recipeSelected = new EventEmitter<Recipe>();
-
   private _recipes: Recipe[] = [
     new Recipe(
       "Lemon Pepper Wings",
@@ -36,8 +33,4 @@ export class RecipeService {
   getRecipeByIndex(index: number) {
     return this._recipes.find((r, i) => i == index);
   }
-
-  // getRecipeByName(name: string) {
-  //   return this._recipes.find(r => r.name == name);
-  // }
 }
