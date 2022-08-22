@@ -3,7 +3,7 @@ import { Ingredient } from "../shared/ingredient.model";
 import { Recipe } from "./recipe.model";
 
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
+  // recipeSelected = new EventEmitter<Recipe>();
 
   private _recipes: Recipe[] = [
     new Recipe(
@@ -32,4 +32,12 @@ export class RecipeService {
   get recipes() {
     return this._recipes;
   }
+
+  getRecipeByIndex(index: number) {
+    return this._recipes.find((r, i) => i == index);
+  }
+
+  // getRecipeByName(name: string) {
+  //   return this._recipes.find(r => r.name == name);
+  // }
 }

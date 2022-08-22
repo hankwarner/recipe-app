@@ -1,15 +1,8 @@
-<app-header
-  (changePageEvent)="changeActivePage($event)"
-></app-header>
+<app-header></app-header>
 <div class="container">
   <span class="row">
     <span class="col-md-12">
-      <app-recipes
-        *ngIf="activePage == 'recipes'"
-      ></app-recipes>
-      <app-shopping-list
-        *ngIf="activePage == 'shopping-list'"
-      ></app-shopping-list>
+      <router-outlet></router-outlet>
     </span>
   </span>
 </div>
