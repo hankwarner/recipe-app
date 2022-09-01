@@ -3,7 +3,7 @@ import { Ingredient } from "../shared/ingredient.model";
 
 export class ShoppingListService  {
   ingredientsChanged = new Subject<Ingredient[]>();
-
+  startEditing = new Subject<number>();
   private _ingredients: Ingredient[] = [
     new Ingredient("Tofu", 2),
     new Ingredient("Sesame Oil", 1)
@@ -11,6 +11,10 @@ export class ShoppingListService  {
 
   get ingredients() {
     return this._ingredients;
+  }
+
+  getIngredient(index: number) {
+    return this._ingredients[index];
   }
 
   addIngredient(ingredient: Ingredient) {
@@ -21,5 +25,13 @@ export class ShoppingListService  {
   addIngredients(ingredients: Ingredient[]) {
     this._ingredients.push(...ingredients);
     this.ingredientsChanged.next(this.ingredients);
+  }
+
+  updateIngredient(index: number, newIngredient: Ingredient) {
+    this._ingredients[index] = newIngredient;
+  }
+
+  deleteIngredient(index: number) {
+    this._ingredients.splice(index, 1);
   }
 }
