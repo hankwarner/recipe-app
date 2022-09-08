@@ -24,6 +24,10 @@ export class RecipeDetailComponent implements OnInit {
       this.id = params.id;
       this.selectedRecipe = this.recipeService.getRecipeByIndex(this.id);
     });
+    this.recipeService.recipesChanged.subscribe(() => {
+        this.selectedRecipe = this.recipeService.getRecipeByIndex(this.id);
+      }
+    );
   }
 
   onAddToShoppingList() {
