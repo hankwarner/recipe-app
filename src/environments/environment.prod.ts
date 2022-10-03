@@ -1,3 +1,5 @@
+
 export const environment = {
-  production: true
+  production: true,
+  API_KEY: process.env.API_KEY
 };
