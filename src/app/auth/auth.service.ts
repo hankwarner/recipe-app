@@ -6,7 +6,7 @@ import { AuthResponseData } from "./auth.model";
 import { User } from "./user.model";
 import { environment } from '../../environments/environment';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthService {
     user = new BehaviorSubject<User>(null);
     private tokenExpirationTimer;

@@ -1,7 +1,7 @@
 import { Component, ComponentFactoryResolver, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, Subject, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AuthResponseData } from './auth.model';
 import { AuthService } from './auth.service';
 import { AlertComponent } from '../shared/alert/alert.component';
